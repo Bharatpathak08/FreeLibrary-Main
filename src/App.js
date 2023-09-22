@@ -6,7 +6,7 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="bg-slate-800 text-white">
+    <div className="bg-slate-800 text-white " >
       <div
         className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
         aria-hidden="true"
@@ -23,20 +23,8 @@ function App() {
       <Navbar />
       <Hero />
 
-      {/* <Contact/> */}
-
-      {/* <Newsletter/> */}
+    
       <Footer />
-
-      {/* <Carousel/> */}
-      {/* <Navbar1/> */}
-      {/* <Banner/> */}
-      {/* <Category/> */}
-      {/* <Cart/> */}
-      {/* <BlogSection/> */}
-      {/* <WorkWithUs/> */}
-      {/* <PageNotFound/> */}
-      {/* <Dashboard/> */}
     </div>
   );
 }

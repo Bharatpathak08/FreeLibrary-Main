@@ -1,17 +1,9 @@
 import { Fragment } from "react";
-import { Popover, Transition } from "@headlessui/react";
+import {  Transition } from "@headlessui/react";
 import {
   ChevronDownIcon,
-  PhoneIcon,
-  PlayCircleIcon,
+ 
 } from "@heroicons/react/20/solid";
-import {
-  ArrowPathIcon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  SquaresPlusIcon,
-} from "@heroicons/react/24/outline";
 
 import React from "react";
 import { useState } from "react";
@@ -25,63 +17,28 @@ function classNames(...classes) {
 }
 
 const navigation = [
-  { name: "Product", href: "#" },
-  { name: "Features", href: "#" },
-  { name: "Marketplace", href: "#" },
-  { name: "Company", href: "#" },
+  { name: "Home", href: "#" },
+  { name: "Categories", href: "#" },
+  { name: "Forum", href: "#" },
+  { name: "Blog", href: "#" },
 ];
 
-const solutions = [
-  {
-    name: "Analytics",
-    description: "Get a better understanding of your traffic",
-    href: "#",
-    icon: ChartPieIcon,
-  },
-  {
-    name: "Engagement",
-    description: "Speak directly to your customers",
-    href: "#",
-    icon: CursorArrowRaysIcon,
-  },
-  {
-    name: "Security",
-    description: "Your customers' data will be safe and secure",
-    href: "#",
-    icon: FingerPrintIcon,
-  },
-  {
-    name: "Integrations",
-    description: "Connect with third-party tools",
-    href: "#",
-    icon: SquaresPlusIcon,
-  },
-  {
-    name: "Automations",
-    description: "Build strategic funnels that will convert",
-    href: "#",
-    icon: ArrowPathIcon,
-  },
-];
-const callsToAction = [
-  { name: "Watch demo", href: "#", icon: PlayCircleIcon },
-  { name: "Contact sales", href: "#", icon: PhoneIcon },
-];
+
 
 function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-slate-800 absolute inset-x-0 top-0 z-50">
+    <header className="bg-slate-800 absolute inset-x-0 top-0 z-50 sticky">
       <nav
-        className="flex   items-center justify-between py-2 lg:px-8 mt-4"
+        className="flex  items-center justify-between py-4 lg:px-8 "
         aria-label="Global"
       >
-        <div className="flex lg:flex-1 ">
+        <div className="flex mt-6 lg:flex-1 ">
           <a href="/" className="-m-1.5 p-1.5 ">
             <span className="sr-only">Your Company</span>
             <img
-              className="h-8 w-auto"
+              className="h-8 w-auto ml-6"
               src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
               alt=""
             />
@@ -89,17 +46,17 @@ function Navbar() {
         </div>
 
         {/* FOR MOBILE  */}
-        <div className="flex lg:hidden">
+        <div className="flex mt-6 lg:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2 mr-7 text-gray-100"
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-        <div className="hidden lg:flex lg:gap-x-12 ">
+        <div className="hidden lg:flex mt-6 lg:gap-x-12 ">
           
           <a
             href="/"
@@ -132,7 +89,7 @@ function Navbar() {
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
               >
-                <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-slate-800 shadow-lg ring-1 ring-white ring-opacity-10 focus:outline-none">
                   <div className="py-1">
                     <Menu.Item>
                       {({ active }) => (
@@ -141,7 +98,7 @@ function Navbar() {
                           className={classNames(
                             active
                               ? "bg-gray-100 text-gray-900"
-                              : "text-gray-700",
+                              : "text-white",
                             "block px-4 py-2 text-sm"
                           )}
                         >
@@ -156,7 +113,7 @@ function Navbar() {
                           className={classNames(
                             active
                               ? "bg-gray-100 text-gray-900"
-                              : "text-gray-700",
+                              : "text-white",
                             "block px-4 py-2 text-sm"
                           )}
                         >
@@ -171,7 +128,7 @@ function Navbar() {
                           className={classNames(
                             active
                               ? "bg-gray-100 text-gray-900"
-                              : "text-gray-700",
+                              : "text-white",
                             "block px-4 py-2 text-sm"
                           )}
                         >
@@ -187,7 +144,7 @@ function Navbar() {
                             className={classNames(
                               active
                                 ? "bg-gray-100 text-gray-900"
-                                : "text-gray-700",
+                                : "text-white",
                               "block w-full px-4 py-2 text-left text-sm"
                             )}
                           >
@@ -222,7 +179,7 @@ function Navbar() {
           </a>
           
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        <div className="hidden lg:flex lg:flex-1 mt-6 lg:justify-end">
           <button
             type="button"
             class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
@@ -259,7 +216,7 @@ function Navbar() {
         onClose={setMobileMenuOpen}
       >
         <div className="fixed inset-0 z-50" />
-        <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+        <Dialog.Panel className="fixed inset-y-0 right-0 z-50 w-60  bg-slate-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-300">
           <div className="flex items-center justify-between">
             <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">Your Company</span>
@@ -271,7 +228,7 @@ function Navbar() {
             </a>
             <button
               type="button"
-              className="-m-2.5 rounded-md p-2.5 text-gray-700"
+              className="-m-2.5 rounded-md p-2.5 text-white"
               onClick={() => setMobileMenuOpen(false)}
             >
               <span className="sr-only">Close menu</span>
@@ -285,7 +242,7 @@ function Navbar() {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-white hover:bg-gray-800"
                   >
                     {item.name}
                   </a>
@@ -294,9 +251,9 @@ function Navbar() {
               <div className="py-6 ">
                 <a
                   href="/"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-100 hover:bg-gray-700"
                 >
-                  Log in
+                  Log In<span aria-hidden="true">&rarr;</span>
                 </a>
               </div>
             </div>

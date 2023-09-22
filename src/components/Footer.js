@@ -51,7 +51,7 @@ export default function Footer() {
               </button>
             </div>
           </div>
-          <dl className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
+          <dl className="grid grid-cols-2y gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
           {/* <div className="mx-auto grid w-full grid-cols-1 gap-8 py-12 md:grid-cols-2 lg:grid-cols-4"> */}
           {SITEMAP.map(({ title, links }, key) => (
             <div key={key} className="w-full">

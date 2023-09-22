@@ -7,7 +7,7 @@ export default function Hero() {
     <div className="bg-slate-800 text-red-100">
       
         
-        <div className="mx-auto max-w-2xl py-28 sm:py-20 lg:py-36">
+        <div className="mx-auto max-w-2xl py-28 sm:py-28 lg:py-24 lg:pb-28 ">
           <div className="hidden sm:mb-6 sm:flex sm:justify-center">
             <div className="relative rounded-full px-3  text-sm leading-6 text-white ring-1 ring-gray-900/10 hover:ring-gray-900/20">
               Announcing our next round of funding.{' '}
