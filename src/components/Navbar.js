@@ -1,9 +1,6 @@
 import { Fragment } from "react";
-import {  Transition } from "@headlessui/react";
-import {
-  ChevronDownIcon,
- 
-} from "@heroicons/react/20/solid";
+import { Transition } from "@headlessui/react";
+import { ChevronDownIcon } from "@heroicons/react/20/solid";
 
 import React from "react";
 import { useState } from "react";
@@ -23,18 +20,16 @@ const navigation = [
   { name: "Blog", href: "#" },
 ];
 
-
-
 function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-slate-800 absolute inset-x-0 top-0 z-50 sticky">
+    <header className="bg-slate-900  inset-x-0 top-0 z-50 sticky">
       <nav
-        className="flex  items-center justify-between py-4 lg:px-8 "
+        className="flex  items-center justify-between py-1 lg:px-8 "
         aria-label="Global"
       >
-        <div className="flex mt-6 lg:flex-1 ">
+        <div className="flex mt-2  lg:flex-1 ">
           <a href="/" className="-m-1.5 p-1.5 ">
             <span className="sr-only">Your Company</span>
             <img
@@ -46,7 +41,7 @@ function Navbar() {
         </div>
 
         {/* FOR MOBILE  */}
-        <div className="flex mt-6 lg:hidden">
+        <div className="flex mt-2 lg:hidden">
           <button
             type="button"
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2 mr-7 text-gray-100"
@@ -56,22 +51,26 @@ function Navbar() {
             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-        <div className="hidden lg:flex mt-6 lg:gap-x-12 ">
-          
-          <a
+        <div className="hidden lg:flex mt-2 lg:gap-x-12 ">
+          <a 
             href="/"
             class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
           >
             Home
+            
           </a>
+         
+
+
+         
 
           <a
             href="/"
-            class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
+            class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md  text-sm font-medium"
           >
             <Menu as="div" className="relative inline-block text-left">
               <div>
-                <Menu.Button className="inline-flex w-full justify-center gap-x-1.5  font-semibold  shadow-sm  ">
+                <Menu.Button className="inline-flex w-full justify-center gap-x-1.5 px-3 py-2  font-semibold  shadow-sm  ">
                   Categories
                   <ChevronDownIcon
                     className="-mr-1 h-5 w-5 text-gray-300"
@@ -89,20 +88,80 @@ function Navbar() {
                 leaveFrom="transform opacity-100 scale-100"
                 leaveTo="transform opacity-0 scale-95"
               >
-                <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-slate-800 shadow-lg ring-1 ring-white ring-opacity-10 focus:outline-none">
+                <Menu.Items className="absolute left-0 z-10 mt-2 w-52 origin-top-right rounded-md bg-slate-800 shadow-lg ring-1 ring-white ring-opacity-10 focus:outline-none">
                   <div className="py-1">
                     <Menu.Item>
                       {({ active }) => (
                         <a
                           href="/"
                           className={classNames(
-                            active
-                              ? "bg-gray-100 text-gray-900"
-                              : "text-white",
-                            "block px-4 py-2 text-sm"
+                            active ? "bg-gray-100 text-gray-900" : "text-white",
+                            "block  text-sm  left-1"
                           )}
                         >
-                          Account settings
+                          <Menu
+                            as="div"
+                            className="relative block" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover"
+                          >
+                            <div className="w-full">
+                              <Menu.Button className="inline-flex w-full  gap-x-1.5 px-3 py-2  text-sm  shadow-sm  ">
+                                School
+                                <ChevronDownIcon
+                                  className="-mr-1 h-5 w-5 text-gray-300"
+                                  aria-hidden="true"
+                                />
+                              </Menu.Button>
+                            </div>
+
+                            <Transition
+                              as={Fragment}
+                              enter="transition ease-out duration-100"
+                              enterFrom="transform opacity-0 scale-95"
+                              enterTo="transform opacity-100 scale-100"
+                              leave="transition ease-in duration-75"
+                              leaveFrom="transform opacity-100 scale-100"
+                              leaveTo="transform opacity-0 scale-95"
+                            >
+                              <Menu.Items className="absolute left-52 top-0 z-10 mt-0 w-56 origin-top-right bg-slate-800 shadow-lg ring-1 ring-white ring-opacity-0 focus:outline-none" id="dropdownHover">
+                                <div className="py-1">
+                                  
+                                  <Menu.Item>
+                                    {({ active }) => (
+                                      <a
+                                        href="/"
+                                        className={classNames(
+                                          active
+                                            ? "bg-gray-100 text-gray-900"
+                                            : "text-white",
+                                          "block px-4 py-2 text-sm"
+                                        )}
+                                      >
+                                        High School
+                                      </a>
+                                    )}
+                                  </Menu.Item>
+                                  <form method="POST" action="#">
+                                    <Menu.Item>
+                                      {({ active }) => (
+                                        <button
+                                          type="submit"
+                                          className={classNames(
+                                            active
+                                              ? "bg-gray-100 text-gray-900"
+                                              : "text-white",
+                                            "block w-full px-4 py-2 text-left text-sm"
+                                          )}
+                                        >
+                                          Senior Secondary
+                                        </button>
+                                      )}
+                                    </Menu.Item>
+                                  </form>
+                                </div>
+                              </Menu.Items>
+                            </Transition>
+                          </Menu>
+                          
                         </a>
                       )}
                     </Menu.Item>
@@ -111,48 +170,164 @@ function Navbar() {
                         <a
                           href="/"
                           className={classNames(
-                            active
-                              ? "bg-gray-100 text-gray-900"
-                              : "text-white",
-                            "block px-4 py-2 text-sm"
+                            active ? "bg-gray-100 text-gray-900" : "text-white",
+                            "block  text-sm"
+                          )}
+                        >
+                            <Menu
+                            as="div"
+                            className="relative block" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover"
+                          >
+                            <div className="w-full">
+                              <Menu.Button className="inline-flex w-full  gap-x-1.5 px-3 py-2  text-sm  shadow-sm  ">
+                                University
+                                <ChevronDownIcon
+                                  className="-mr-1 h-5 w-5 text-gray-300"
+                                  aria-hidden="true"
+                                />
+                              </Menu.Button>
+                            </div>
+
+                            <Transition
+                              as={Fragment}
+                              enter="transition ease-out duration-100"
+                              enterFrom="transform opacity-0 scale-95"
+                              enterTo="transform opacity-100 scale-100"
+                              leave="transition ease-in duration-75"
+                              leaveFrom="transform opacity-100 scale-100"
+                              leaveTo="transform opacity-0 scale-95"
+                            >
+                              <Menu.Items className="absolute left-52 top-0 z-10 mt-0 w-56 origin-top-right bg-slate-800 shadow-lg ring-1 ring-white ring-opacity-0 focus:outline-none" id="dropdownHover">
+                                <div className="py-1">
+                                  
+                                  <Menu.Item>
+                                    {({ active }) => (
+                                      <a
+                                        href="/"
+                                        className={classNames(
+                                          active
+                                            ? "bg-gray-100 text-gray-900"
+                                            : "text-white",
+                                          "block px-4 py-2 text-sm"
+                                        )}
+                                      >
+                                        Under Graduate (UG)
+                                      </a>
+                                    )}
+                                  </Menu.Item>
+                                  <form method="POST" action="#">
+                                    <Menu.Item>
+                                      {({ active }) => (
+                                        <button
+                                          type="submit"
+                                          className={classNames(
+                                            active
+                                              ? "bg-gray-100 text-gray-900"
+                                              : "text-white",
+                                            "block w-full px-4 py-2 text-left text-sm"
+                                          )}
+                                        >
+                                          Post Graduate (PG)
+                                        </button>
+                                      )}
+                                    </Menu.Item>
+                                  </form>
+                                </div>
+                              </Menu.Items>
+                            </Transition>
+                          </Menu>
+                        </a>
+                      )}
+                    </Menu.Item>
+                    <Menu.Item>
+                      {({ active }) => (
+                        <a
+                          href="/"
+                          className={classNames(
+                            active ? "bg-gray-100 text-gray-900" : "text-white",
+                            "block  text-sm"
+                          )}
+                        >
+                            <Menu
+                            as="div"
+                            className="relative block" data-dropdown-toggle="dropdownHover" data-dropdown-trigger="hover"
+                          >
+                            <div className="w-full">
+                              <Menu.Button className="inline-flex w-full  gap-x-1.5 px-3 py-2  text-sm  shadow-sm  ">
+                                Novel
+                                <ChevronDownIcon
+                                  className="-mr-1 h-5 w-5 text-gray-300"
+                                  aria-hidden="true"
+                                />
+                              </Menu.Button>
+                            </div>
+
+                            <Transition
+                              as={Fragment}
+                              enter="transition ease-out duration-100"
+                              enterFrom="transform opacity-0 scale-95"
+                              enterTo="transform opacity-100 scale-100"
+                              leave="transition ease-in duration-75"
+                              leaveFrom="transform opacity-100 scale-100"
+                              leaveTo="transform opacity-0 scale-95"
+                            >
+                              <Menu.Items className="absolute left-52 top-0 z-10 mt-0 w-56 origin-top-right bg-slate-800 shadow-lg ring-1 ring-white ring-opacity-0 focus:outline-none" id="dropdownHover">
+                                <div className="py-1">
+                                  
+                                  <Menu.Item>
+                                    {({ active }) => (
+                                      <a
+                                        href="/"
+                                        className={classNames(
+                                          active
+                                            ? "bg-gray-100 text-gray-900"
+                                            : "text-white",
+                                          "block px-4 py-2 text-sm"
+                                        )}
+                                      >
+                                        Fiction
+                                      </a>
+                                    )}
+                                  </Menu.Item>
+                                  <form method="POST" action="#">
+                                    <Menu.Item>
+                                      {({ active }) => (
+                                        <button
+                                          type="submit"
+                                          className={classNames(
+                                            active
+                                              ? "bg-gray-100 text-gray-900"
+                                              : "text-white",
+                                            "block w-full px-4 py-2 text-left text-sm"
+                                          )}
+                                        >
+                                          Non-Fiction
+                                        </button>
+                                      )}
+                                    </Menu.Item>
+                                  </form>
+                                </div>
+                              </Menu.Items>
+                            </Transition>
+                          </Menu>
+                        </a>
+                      )}
+                    </Menu.Item>
+                    
+                             <Menu.Item>
+                      {({ active }) => (
+                        <a
+                          href="/"
+                          className={classNames(
+                            active ? "bg-gray-100 text-gray-900" : "text-white",
+                            "block px-3 py-2 text-sm"
                           )}
                         >
                           Support
                         </a>
                       )}
                     </Menu.Item>
-                    <Menu.Item>
-                      {({ active }) => (
-                        <a
-                          href="/"
-                          className={classNames(
-                            active
-                              ? "bg-gray-100 text-gray-900"
-                              : "text-white",
-                            "block px-4 py-2 text-sm"
-                          )}
-                        >
-                          License
-                        </a>
-                      )}
-                    </Menu.Item>
-                    <form method="POST" action="#">
-                      <Menu.Item>
-                        {({ active }) => (
-                          <button
-                            type="submit"
-                            className={classNames(
-                              active
-                                ? "bg-gray-100 text-gray-900"
-                                : "text-white",
-                              "block w-full px-4 py-2 text-left text-sm"
-                            )}
-                          >
-                            Sign out
-                          </button>
-                        )}
-                      </Menu.Item>
-                    </form>
+                         
                   </div>
                 </Menu.Items>
               </Transition>
@@ -177,9 +352,22 @@ function Navbar() {
           >
             Contact Us
           </a>
+          </div>
+
+          <div className="flex mt-2 ml-24 ">
+                <input
+                    type="text"
+                    className="block w-44 px-4 py-3 text-slate-100 bg-slate-800 border border-white  rounded-md focus:border-gray-300 focus:ring-purple-300  focus:outline-none h-8 mt-1 focus:ring focus:ring-opacity-40"
+                    placeholder="Search..."
+                />
+                <button className="px-4 h-8 mt-1 ml-2 text-white bg-green-700  rounded ">
+                    Search 
+                    {/* 🔍&#128269;&#x1F50D; */}
+
+                </button>
+            </div>
+        <div className="hidden lg:flex lg:flex-1 mb-2 mt-4 lg:justify-end">
           
-        </div>
-        <div className="hidden lg:flex lg:flex-1 mt-6 lg:justify-end">
           <button
             type="button"
             class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
@@ -209,6 +397,8 @@ function Navbar() {
           </a>
         </div>
       </nav>
+
+
       <Dialog
         as="div"
         className="lg:hidden"
