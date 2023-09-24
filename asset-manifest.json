@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/FreeLibrary-Main/static/css/main.4737ff20.css",
+    "main.js": "/FreeLibrary-Main/static/js/main.536d6b62.js",
+    "static/js/496.4e4f8be6.chunk.js": "/FreeLibrary-Main/static/js/496.4e4f8be6.chunk.js",
+    "index.html": "/FreeLibrary-Main/index.html",
+    "main.4737ff20.css.map": "/FreeLibrary-Main/static/css/main.4737ff20.css.map",
+    "main.536d6b62.js.map": "/FreeLibrary-Main/static/js/main.536d6b62.js.map",
+    "496.4e4f8be6.chunk.js.map": "/FreeLibrary-Main/static/js/496.4e4f8be6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4737ff20.css",
+    "static/js/main.536d6b62.js"
+  ]
+}
