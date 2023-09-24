@@ -4,11 +4,11 @@
 export default function Hero() {
 
   return (
-    <div className="bg-slate-800 text-red-100">
+    <div className="bg-slate-800 my-28 text-red-100">
       
         
-        <div className="mx-auto max-w-2xl py-28 sm:py-28 lg:py-24 lg:pb-28 ">
-          <div className="hidden sm:mb-6 sm:flex sm:justify-center">
+        <div className="mx-auto max-w-2xl py-20 sm:py-28 lg:py-12 lg:pb-10 ">
+          {/* <div className="hidden sm:mb-6 sm:flex sm:justify-center">
             <div className="relative rounded-full px-3  text-sm leading-6 text-white ring-1 ring-gray-900/10 hover:ring-gray-900/20">
               Announcing our next round of funding.{' '}
               <a href="/" className="font-semibold text-green-600">
@@ -16,7 +16,7 @@ export default function Hero() {
                 Read more <span aria-hidden="true">&rarr;</span>
               </a>
             </div>
-          </div>
+          </div> */}
           <div className="text-center">
             <h1 className="text-4xl font-bold tracking-tight text-blue-200 sm:text-6xl">
               Data to enrich your online business

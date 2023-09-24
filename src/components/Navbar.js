@@ -18,6 +18,8 @@ const navigation = [
   { name: "Categories", href: "#" },
   { name: "Forum", href: "#" },
   { name: "Blog", href: "#" },
+  { name: "Contact Us", href: "#" },
+
 ];
 
 function Navbar() {
@@ -347,7 +349,7 @@ function Navbar() {
             Blog
           </a>
           <a
-            href="/"
+            href="#contact"
             class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium"
           >
             Contact Us
@@ -357,7 +359,7 @@ function Navbar() {
           <div className="flex mt-2 ml-24 ">
                 <input
                     type="text"
-                    className="block w-44 px-4 py-3 text-slate-100 bg-slate-800 border border-white  rounded-md focus:border-gray-300 focus:ring-purple-300  focus:outline-none h-8 mt-1 focus:ring focus:ring-opacity-40"
+                    className="block w-44 px-4 py-3 text-slate-100 bg-slate-800  focus:border-gray-300 focus:ring-green-300  focus:outline-none h-8 mt-1 focus:ring focus:ring-opacity-40"
                     placeholder="Search..."
                 />
                 <button className="px-4 h-8 mt-1 ml-2 text-white bg-green-700  rounded ">

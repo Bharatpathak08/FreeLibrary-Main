@@ -7,7 +7,7 @@ import Contact from "./components/Contact";
 
 function App() {
   return (
-    <div className="bg-slate-800 text-white " >
+    <div className="bg-slate-800 text-white scroll-smooth  " >
       <div
         className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
         aria-hidden="true"
