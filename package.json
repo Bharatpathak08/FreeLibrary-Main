@@ -1,6 +1,7 @@
 {
   "name": "bookseller",
   "version": "0.1.0",
+  "homepage": "https://Bharatpathak08.github.io/FreeLibrary-Main",
   "private": true,
   "dependencies": {
     "@headlessui/react": "^1.7.17",
@@ -19,6 +20,8 @@
     "web-vitals": "^3.4.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -45,6 +48,7 @@
   "devDependencies": {
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "autoprefixer": "^10.4.15",
+    "gh-pages": "^6.0.0",
     "postcss": "^8.4.29",
     "tailwindcss": "^3.3.3"
   }
