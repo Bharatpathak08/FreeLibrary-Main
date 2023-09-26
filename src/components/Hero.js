@@ -4,7 +4,7 @@
 export default function Hero() {
 
   return (
-    <div className="bg-slate-800 my-28 text-red-100">
+    <div id="home" className="bg-slate-800 pt-16 pb-28 text-red-100">
       
         
         <div className="mx-auto max-w-2xl py-20 sm:py-28 lg:py-12 lg:pb-10 ">

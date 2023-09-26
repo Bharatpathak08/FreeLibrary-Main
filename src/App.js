@@ -4,6 +4,8 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
+import Cards from "./components/Cards";
+import MyPdf from "./components/pdf";
 
 function App() {
   return (
@@ -23,9 +25,10 @@ function App() {
 
       <Navbar />
       <Hero />
+      <Cards/>
       <Contact/>
       <Footer />
-
+{/* <MyPdf/> */}
 
     </div>
   );
